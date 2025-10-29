@@ -1,2 +1,2 @@
-# Run n Beer
-Ở đây không có bia! 
+# Xin chào!
+Ở đây không có bia đâu.
