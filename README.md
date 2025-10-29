@@ -1,2 +1,2 @@
-# runnbeer
-Landing page of Run n Beer
+# Run n Beer
+Ở đây không có bia! 
