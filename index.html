@@ -3,43 +3,125 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Run n Beer — No Run No Beer</title>
-  <meta name="description" content="Run n Beer community training hub." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css" />
+  <title>Run n Beer — Ở đây không có bia đâu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    .home-hero{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#dfff4a 0%,#eaff86 100%);color:#111}
-    .home-hero:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.45),transparent 28%)}
-    .home-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center;padding-top:54px;padding-bottom:54px}
-    .home-logo{width:min(310px,70vw);filter:drop-shadow(0 14px 30px rgba(0,0,0,.2))}
-    .home-kicker{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.14em}
-    .home-title{font:900 clamp(70px,12vw,150px)/.76 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:16px 0 22px;letter-spacing:-.02em}
-    .home-title span{display:block}
-    .home-copy{max-width:620px;font-size:17px;line-height:1.7;color:rgba(17,17,17,.72)}
-    .home-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-    .home-primary{display:inline-flex;padding:13px 18px;border-radius:8px;background:#08111f;color:#fff!important;font-size:12px;font-weight:900;text-transform:uppercase}
-    .home-secondary{display:inline-flex;padding:13px 18px;border-radius:8px;border:1px solid rgba(17,17,17,.35);color:#111!important;font-size:12px;font-weight:900;text-transform:uppercase}
-    .home-note{margin-top:28px;font-size:11px;font-weight:800;text-transform:uppercase;color:rgba(17,17,17,.55)}
-    @media(max-width:760px){.home-grid{grid-template-columns:1fr;text-align:center}.home-logo{margin:auto}.home-copy{margin:auto}.home-actions{justify-content:center}.home-title{font-size:84px}}
+    :root{
+      --bg: #dfff4a;
+      --accent: #111;
+      --muted: rgba(17,17,17,0.7);
+    }
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;}
+    body{
+      background: linear-gradient(180deg, var(--bg), #e6ff7a 60%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+    .card{
+      width: min(920px, 94vw);
+      background: rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:36px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      display:flex;
+      gap:28px;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      transform: translateY(0);
+      animation: popIn 700ms cubic-bezier(.2,.9,.3,1);
+    }
+    @keyframes popIn {
+      from { transform: translateY(10px) scale(.995); opacity:0; }
+      to { transform: translateY(0) scale(1); opacity:1; }
+    }
+    img.logo {
+      width: 260px;
+      max-width: 55%;
+      height: auto;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25));
+    }
+    h1{
+      margin: 12px 0 6px;
+      font-size: 46px;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    p.lead{
+      margin:0;
+      color: var(--muted);
+      font-size:18px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border:2px solid #111;
+      border-radius:999px;
+      color:#111;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:700;
+      transition:160ms ease;
+    }
+    .cta:hover{background:#111;color:var(--bg);transform:translateY(-2px)}
+
+    .bubbles{
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .bubble{
+      position: absolute;
+      bottom: -120px;
+      width: 18px;
+      height: 18px;
+      background: rgba(255,255,255,0.45);
+      border-radius:50%;
+      filter: blur(6px);
+      animation: rise 8s linear infinite;
+      opacity: 0.75;
+    }
+    .bubble:nth-child(1){ left: 12%; width: 28px; height:28px; animation-duration:9s; animation-delay:0s; }
+    .bubble:nth-child(2){ left: 28%; width: 14px; height:14px; animation-duration:7.5s; animation-delay:1s; }
+    .bubble:nth-child(3){ left: 48%; width: 22px; height:22px; animation-duration:10s; animation-delay:2s; }
+    .bubble:nth-child(4){ left: 68%; width: 16px; height:16px; animation-duration:8.5s; animation-delay:3s; }
+    .bubble:nth-child(5){ left: 86%; width: 24px; height:24px; animation-duration:11s; animation-delay:1.5s; }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(0.9); opacity:0; }
+      10% { opacity:0.7; }
+      100% { transform: translateY(-120vh) scale(1.2); opacity:0; }
+    }
+
+    footer{ margin-top:14px; font-size:13px; color:var(--muted) }
+    @media (max-width:520px){
+      h1{ font-size:28px; }
+      .card{ padding:20px; border-radius:14px; gap:12px; }
+      img.logo{ width: 180px; }
+    }
   </style>
 </head>
-<body class="rn-site">
-  <main class="home-hero">
-    <div class="rn-wrap home-grid">
-      <div><img class="home-logo" src="/logo.svg" alt="Run n Beer logo"></div>
-      <div>
-        <div class="home-kicker">Run n Beer · Est. 2017</div>
-        <h1 class="home-title"><span>No Run.</span><span>No Beer.</span></h1>
-        <p class="home-copy">Ở đây vẫn chưa có bia đâu. Nhưng giờ đã có Training Plans — nơi gom các dự án tập luyện của Run n Beer thành một hệ thống dễ xem, dễ theo và dễ quay lại mỗi tuần.</p>
-        <div class="home-actions">
-          <a class="home-primary" href="/plan/">Explore Training Plans →</a>
-          <a class="home-secondary" href="/plan/full-marathon/12-week/">Open 12-Week FM Plan</a>
-        </div>
-        <div class="home-note">Community training · Trust the miles.</div>
-      </div>
-    </div>
+<body>
+  <div class="bubbles" aria-hidden="true">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <main class="card" role="main" aria-labelledby="title">
+    <img src="logo.jpg" alt="Run n Beer logo" class="logo" />
+    <h1 id="title">Ở đây không có bia đâu</h1>
+    <footer>📅 Sắp ra mắt — theo dõi tại <strong>runnbeer.com</strong></footer>
+    <a class="cta" href="/plan/">Training Plans →</a>
   </main>
 </body>
 </html>
