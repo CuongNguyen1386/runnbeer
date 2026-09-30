@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>9th Anniversary Challenge — Run n Beer</title>
-  <meta name="description" content="Run n Beer 9th Anniversary Challenge — 9 teams, 27 runners, 14 days.">
+  <meta name="description" content="Run n Beer 9th Anniversary Challenge — 10 teams, 30 runners, 14 days.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -18,9 +18,13 @@
     .event-title{font:900 clamp(72px,13vw,168px)/.72 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:18px 0 20px;letter-spacing:-.02em}.event-title span{color:var(--yellow)}
     .event-sub{font:800 clamp(20px,3vw,34px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;max-width:760px}.event-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.event-meta span{background:#08111f;color:#fff;border-radius:999px;padding:9px 13px;font-size:10px;font-weight:900;text-transform:uppercase}.event-meta b{color:var(--yellow)}
     .intro{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;margin-bottom:38px}.intro-card{background:var(--paper);color:#08111f;border-radius:18px;padding:28px}.intro-card h2{font:900 44px/.9 'Barlow Condensed';text-transform:uppercase;margin:0 0 14px}.intro-card p{color:#43506a;line-height:1.7;margin:0}.rules{background:#0b86df;color:#fff;border-radius:18px;padding:26px}.rules h3{font:900 34px/.9 'Barlow Condensed';text-transform:uppercase;margin:0 0 16px}.rules div{font-size:13px;line-height:1.8}.rules b{color:var(--yellow)}
-    .leader-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.leader-head h2{font:900 clamp(50px,7vw,82px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}.leader-note{font-size:11px;color:var(--rn-muted);text-align:right}
-    .board{display:grid;gap:10px}.row{display:grid;grid-template-columns:68px 1fr 120px;align-items:center;gap:12px;background:var(--rn-navy2);border:1px solid var(--rn-line);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}.row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--progress,0%);background:linear-gradient(90deg,rgba(255,235,0,.13),rgba(255,235,0,.02));pointer-events:none}.rank,.team,.km{position:relative;z-index:1}.rank{font:900 26px 'Barlow Condensed';color:var(--yellow)}.team{font:900 30px/.95 'Barlow Condensed';text-transform:uppercase}.km{text-align:right;font:900 27px 'Barlow Condensed'}.km small{display:block;color:var(--rn-muted);font:800 9px Manrope;text-transform:uppercase;letter-spacing:.08em}.top1{border-color:rgba(255,235,0,.6)}.top1 .rank{font-size:34px}.top2 .rank,.top3 .rank{color:#fff}.loading,.error{padding:20px;border:1px dashed var(--rn-line);border-radius:12px;color:var(--rn-muted)}
-    @media(max-width:760px){.intro{grid-template-columns:1fr}.event-title{font-size:84px}.row{grid-template-columns:48px 1fr 82px;padding:14px}.team{font-size:24px}.km{font-size:22px}.leader-head{align-items:flex-start;flex-direction:column}.leader-note{text-align:left}}
+    .leader-head{border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.leader-head h2{font:900 clamp(50px,7vw,82px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}
+    .board{display:grid;gap:10px}.row{display:grid;grid-template-columns:68px 1fr 120px;align-items:center;gap:12px;background:var(--rn-navy2);border:1px solid var(--rn-line);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden}.row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--progress,0%);background:linear-gradient(90deg,rgba(255,235,0,.13),rgba(255,235,0,.02));pointer-events:none}.rank,.team,.km{position:relative;z-index:1}.rank{font:900 26px 'Barlow Condensed';color:var(--yellow)}.team{font:900 30px/.95 'Barlow Condensed';text-transform:uppercase}.km{text-align:right;font:900 27px 'Barlow Condensed'}.km small{display:block;color:var(--rn-muted);font:800 9px Manrope;text-transform:uppercase;letter-spacing:.08em}
+    .top1{border:2px solid var(--yellow);background:linear-gradient(90deg,rgba(255,235,0,.20),var(--rn-navy2) 55%);box-shadow:0 0 0 1px rgba(255,235,0,.08),0 12px 34px rgba(0,0,0,.16)}.top1 .rank{width:50px;height:50px;display:grid;place-items:center;border-radius:50%;background:var(--yellow);color:#08111f;font-size:28px}.top1 .team,.top1 .km{color:#fff}
+    .top2{border-color:#d9e5ef;background:linear-gradient(90deg,rgba(217,229,239,.12),var(--rn-navy2) 48%)}.top2 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#d9e5ef;color:#08111f;font-size:24px}
+    .top3{border-color:#f59e0b;background:linear-gradient(90deg,rgba(245,158,11,.12),var(--rn-navy2) 48%)}.top3 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f59e0b;color:#08111f;font-size:24px}
+    .loading,.error{padding:20px;border:1px dashed var(--rn-line);border-radius:12px;color:var(--rn-muted)}
+    @media(max-width:760px){.intro{grid-template-columns:1fr}.event-title{font-size:84px}.row{grid-template-columns:52px 1fr 82px;padding:14px}.team{font-size:24px}.km{font-size:22px}.top1 .rank{width:46px;height:46px}.top2 .rank,.top3 .rank{width:40px;height:40px}}
   </style>
 </head>
 <body class="rn-site">
@@ -31,19 +35,19 @@
       <div class="event-kicker">28.09 — 11.10.2026 · 14 Days</div>
       <h1 class="event-title"><span>9th</span> Anniversary<br>Challenge</h1>
       <div class="event-sub">Run together · Drink happier · Stay healthier</div>
-      <div class="event-meta"><span><b>9</b> Teams</span><span><b>27</b> Runners</span><span><b>150 KM</b> / Team</span><span><b>50 KM</b> / Runner</span></div>
+      <div class="event-meta"><span><b id="team-count">10</b> Teams</span><span><b id="runner-count">30</b> Runners</span><span><b>150 KM</b> / Team</span><span><b>50 KM</b> / Runner</span></div>
     </div>
   </header>
 
   <main class="rn-section">
     <div class="rn-wrap">
       <div class="intro">
-        <section class="intro-card"><h2>Welcome 9 Teams!</h2><p>Challenge mừng 9 năm Run n Beer: 3 runner mỗi đội, ít nhất 1 nữ. Cùng tích km trong 14 ngày để chạm mốc của team — và quan trọng nhất là giữ tinh thần chạy cùng nhau, vui cùng nhau.</p></section>
+        <section class="intro-card"><h2>Welcome <span id="welcome-count">10</span> Teams!</h2><p>Challenge mừng 9 năm Run n Beer: 3 runner mỗi đội, ít nhất 1 nữ. Cùng tích km trong 14 ngày để chạm mốc của team — và quan trọng nhất là giữ tinh thần chạy cùng nhau, vui cùng nhau.</p></section>
         <aside class="rules"><h3>Challenge Rules</h3><div><b>14 ngày</b> · Online 100%<br><b>3 runner / team</b> · ít nhất 1 nữ<br><b>150 km / team</b><br><b>50 km / runner</b></div></aside>
       </div>
 
       <section id="leaderboard">
-        <div class="leader-head"><div><div class="rn-eyebrow">Live standings</div><h2>Leaderboard</h2></div><div class="leader-note">Dữ liệu cập nhật từ bảng xếp hạng chính thức<br><span id="updated">Đang tải dữ liệu...</span></div></div>
+        <div class="leader-head"><div class="rn-eyebrow">Live standings</div><h2>Leaderboard</h2></div>
         <div id="board" class="board"><div class="loading">Đang tải bảng xếp hạng…</div></div>
       </section>
     </div>
@@ -66,14 +70,22 @@
       }).filter(r=>r[1]);
     }
 
+    function updateCounts(rows){
+      const teams=rows.length;
+      document.getElementById('team-count').textContent=teams;
+      document.getElementById('runner-count').textContent=teams*3;
+      document.getElementById('welcome-count').textContent=teams;
+    }
+
     function render(rows){
+      updateCounts(rows);
       const max=Math.max(...rows.map(r=>r[2]),150);
       document.getElementById('board').innerHTML=rows.map((r,i)=>`<div class="row ${i===0?'top1':i===1?'top2':i===2?'top3':''}" style="--progress:${Math.min(100,(r[2]/max)*100)}%"><div class="rank">#${String(r[0]).padStart(2,'0')}</div><div class="team">${r[1]}</div><div class="km">${r[2].toLocaleString('vi-VN',{minimumFractionDigits:r[2]%1?2:0,maximumFractionDigits:2})}<small>KM</small></div></div>`).join('');
     }
 
     async function load(){
-      try{const res=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(!res.ok)throw new Error('Fetch failed');const rows=parseCSV(await res.text());if(!rows.length)throw new Error('No data');render(rows);document.getElementById('updated').textContent='Cập nhật tự động từ Google Sheet';}
-      catch(e){render(fallback);document.getElementById('updated').textContent='Không đọc được Google Sheet · đang hiển thị dữ liệu dự phòng';}
+      try{const res=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(!res.ok)throw new Error('Fetch failed');const rows=parseCSV(await res.text());if(!rows.length)throw new Error('No data');render(rows);}
+      catch(e){render(fallback);}
     }
     load();
   </script>
