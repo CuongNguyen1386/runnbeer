@@ -52,8 +52,7 @@
   <footer class="rn-footer"><div class="rn-wrap rn-footer-inner"><div>Run n Beer · Est. 2017</div><div class="rn-motto">Stronger. Healthier. Happier.</div></div></footer>
 
   <script>
-    /* DÁN LINK CSV GOOGLE SHEET CỦA FEN VÀO GIỮA 2 DẤU NHÁY BÊN DƯỚI */
-    const SHEET_CSV_URL = "";
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=880518161&single=true&output=csv";
 
     const fallback = [
       [1,"Pọ this Pô that",41.32],[2,"3ba ba & Thỏ",41.02],[3,"Siu Nhơn",24.57],[4,"Quán nào?",20.90],[5,"Thắng Hào sáng, không Hạ pace",15.82],[6,"Muộn mà Dai",10.03],[7,"Team CT",0],[8,"8 Lời",0],[9,"Muộn Nhất",0]
@@ -73,8 +72,7 @@
     }
 
     async function load(){
-      if(!SHEET_CSV_URL){render(fallback);document.getElementById('updated').textContent='Demo data · Chưa kết nối Google Sheet';return;}
-      try{const res=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(!res.ok)throw new Error('Fetch failed');const rows=parseCSV(await res.text());render(rows);document.getElementById('updated').textContent='Cập nhật tự động từ Google Sheet';}
+      try{const res=await fetch(SHEET_CSV_URL,{cache:'no-store'});if(!res.ok)throw new Error('Fetch failed');const rows=parseCSV(await res.text());if(!rows.length)throw new Error('No data');render(rows);document.getElementById('updated').textContent='Cập nhật tự động từ Google Sheet';}
       catch(e){render(fallback);document.getElementById('updated').textContent='Không đọc được Google Sheet · đang hiển thị dữ liệu dự phòng';}
     }
     load();
