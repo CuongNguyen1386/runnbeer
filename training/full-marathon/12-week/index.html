@@ -41,10 +41,34 @@ const W=[
 {w:11,d:'09/11/2026–15/11/2026',t:'Deep Taper, Volume -40%',s:[['Tuesday 10/11','Q1','Warm-up 15 min + 4 × 1 km T-Pace.','T-Pace 4:24/km','1 min recovery',''],['Wednesday 11/11','Strength','Rest or easy recovery yoga.','','',''],['Friday 13/11','Q2','6 km at M-Pace.','M-Pace 4:58/km','',''],['Sat/Sun 14–15/11','Q3 · Long Run','14 km E-Pace.','','','Keep legs light; maximize energy storage.']]},
 {w:12,d:'16/11/2026–22/11/2026',t:'Race Week',m:'Full Marathon · 22/11',s:[['Tuesday 17/11','Reminder','Warm-up 10 min + 3 × 1 km M-Pace.','M-Pace 4:58/km','2 min walking recovery','Reminder session only; do not create fatigue.'],['Wednesday 18/11','Rest','Complete rest.','','','Begin gradually increasing carbohydrate intake in main meals.'],['Thursday 19/11','Easy','Ultra-easy 4 km E-Pace.','','',''],['Friday 20/11','Easy + strides','Easy 3 km E-Pace + 3 × 15 sec light strides.','','',''],['Saturday 21/11','Rest','Complete rest.','','','Check equipment, bib and sleep early.'],['Sunday 22/11','Race Day','RACE DAY — FULL MARATHON.','','','']],st:'Even effort. Lock 4:58–5:02/km for first 21 km. Stay calm early. From km 30+, execute based on remaining muscular durability.'}
 ];
-let cur=3,fil='all';const weeks=document.getElementById('weeks'),dr=document.getElementById('drawer');
-function render(){weeks.innerHTML=W.filter(x=>fil==='all'||(fil==='current'&&x.w===4)||(fil==='key'&&x.m)).map(x=>`<button class="week ${x.m?'milestone':''}" onclick="openD(${x.w})"><div class="wkno">${String(x.w).padStart(2,'0')}</div><div class="date">${x.d}</div><h3>${x.t}</h3>${x.m?`<div class="flag">⚑ ${x.m}</div>`:''}</button>`).join('')}
+const PLAN_START=new Date('2026-08-31T00:00:00+07:00');
+const PLAN_END=new Date('2026-11-22T23:59:59+07:00');
+
+function getCurrentWeek(){
+  const now=new Date();
+  if(now<PLAN_START)return 0;
+  if(now>PLAN_END)return 12;
+  const weekMs=7*24*60*60*1000;
+  return Math.min(12,Math.floor((now-PLAN_START)/weekMs)+1);
+}
+
+const currentWeek=getCurrentWeek();
+
+let cur=Math.max(0,currentWeek-1),fil='all';
+const weeks=document.getElementById('weeks'),dr=document.getElementById('drawer');
+
+function render(){
+  const visibleWeeks=W.filter(x=>{
+    if(x.w>currentWeek)return false;
+    if(fil==='current')return x.w===currentWeek;
+    if(fil==='key')return !!x.m;
+    return true;
+  });
+
+  weeks.innerHTML=visibleWeeks.map(x=>`<button class="week ${x.m?'milestone':''}" onclick="openD(${x.w})"><div class="wkno">${String(x.w).padStart(2,'0')}</div><div class="date">${x.d}</div><h3>${x.t}</h3>${x.m?`<div class="flag">⚑ ${x.m}</div>`:''}</button>`).join('');
+}{weeks.innerHTML=W.filter(x=>fil==='all'||(fil==='current'&&x.w===4)||(fil==='key'&&x.m)).map(x=>`<button class="week ${x.m?'milestone':''}" onclick="openD(${x.w})"><div class="wkno">${String(x.w).padStart(2,'0')}</div><div class="date">${x.d}</div><h3>${x.t}</h3>${x.m?`<div class="flag">⚑ ${x.m}</div>`:''}</button>`).join('')}
 document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');fil=b.dataset.f;render()});
-function openD(w){cur=w-1;let x=W[cur];dsub.textContent=`Week ${String(x.w).padStart(2,'0')} · ${x.d}`;dtitle.textContent=x.t;dflag.textContent=x.m?'⚑ '+x.m:'';dbody.innerHTML=x.s.map(s=>`<div class="session"><div><small>${s[0]}</small><h4>${s[1]}</h4></div><div><p><b>${s[2]}</b></p>${s[3]?`<p class="meta">Pace: ${s[3]}</p>`:''}${s[4]?`<p class="meta">Recovery: ${s[4]}</p>`:''}${s[5]?`<p class="meta">Note: ${s[5]}</p>`:''}</div></div>`).join('')+((x.st||x.g)?`<div class="strategy">${x.st?`<b>Strategy:</b> ${x.st}`:''}${x.g?`<br><b>Goal:</b> ${x.g}`:''}</div>`:'');prev.disabled=cur===0;next.disabled=cur===11;dr.classList.add('open');document.body.style.overflow='hidden'}
+function openD(w){cur=w-1;let x=W[cur];dsub.textContent=`Week ${String(x.w).padStart(2,'0')} · ${x.d}`;dtitle.textContent=x.t;dflag.textContent=x.m?'⚑ '+x.m:'';dbody.innerHTML=x.s.map(s=>`<div class="session"><div><small>${s[0]}</small><h4>${s[1]}</h4></div><div><p><b>${s[2]}</b></p>${s[3]?`<p class="meta">Pace: ${s[3]}</p>`:''}${s[4]?`<p class="meta">Recovery: ${s[4]}</p>`:''}${s[5]?`<p class="meta">Note: ${s[5]}</p>`:''}</div></div>`).join('')+((x.st||x.g)?`<div class="strategy">${x.st?`<b>Strategy:</b> ${x.st}`:''}${x.g?`<br><b>Goal:</b> ${x.g}`:''}</div>`:'');prev.disabled=cur===0;next.disabled=x.w>=currentWeek;dr.classList.add('open');document.body.style.overflow='hidden'}
 function closeD(){dr.classList.remove('open');document.body.style.overflow=''}function move(n){openD(W[cur+n].w)}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD()});render();
 </script>
 </body></html>
