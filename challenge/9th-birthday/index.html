@@ -17,7 +17,7 @@
     .event-title{font:900 clamp(72px,13vw,168px)/.72 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:18px 0 20px;letter-spacing:-.02em}.event-title span{color:var(--yellow)}
     .event-sub{font:800 clamp(20px,3vw,34px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;max-width:760px}.event-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.event-meta span{background:#08111f;color:#fff;border-radius:999px;padding:9px 13px;font-size:10px;font-weight:900;text-transform:uppercase}.event-meta b{color:var(--yellow)}
     .intro{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;margin-bottom:38px}.intro-card{background:var(--paper);color:#08111f;border-radius:18px;padding:28px}.intro-card h2{font:900 44px/.9 'Barlow Condensed';text-transform:uppercase;margin:0 0 14px}.intro-card p{color:#43506a;line-height:1.7;margin:0}.rules{background:#0b86df;color:#fff;border-radius:18px;padding:26px}.rules h3{font:900 34px/.9 'Barlow Condensed';text-transform:uppercase;margin:0 0 16px}.rules div{font-size:13px;line-height:1.8}.rules b{color:var(--yellow)}
-    .leader-head{border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.leader-head h2{font:900 clamp(50px,7vw,82px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}
+    .leader-head{border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.update-time{margin-top:12px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--rn-muted)}.update-time b{color:var(--yellow)}.leader-head h2{font:900 clamp(50px,7vw,82px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}
     .board{display:grid;gap:10px}.team-block{border-radius:14px;overflow:hidden}.row{width:100%;border:1px solid var(--rn-line);display:grid;grid-template-columns:68px 1fr 120px 28px;align-items:center;gap:12px;background:var(--rn-navy2);color:#fff;border-radius:14px;padding:16px 18px;position:relative;overflow:hidden;text-align:left;cursor:pointer;font:inherit}.row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--progress,0%);background:linear-gradient(90deg,rgba(255,235,0,.13),rgba(255,235,0,.02));pointer-events:none}.rank,.team,.km,.chev{position:relative;z-index:1}.rank{font:900 26px 'Barlow Condensed';color:var(--yellow)}.team{font:900 30px/.95 'Barlow Condensed';text-transform:uppercase}.km{text-align:right;font:900 27px 'Barlow Condensed'}.km small{display:block;color:var(--rn-muted);font:800 9px Manrope;text-transform:uppercase;letter-spacing:.08em}.chev{text-align:center;color:var(--yellow);font-size:18px;transition:transform .2s}.team-block.open .chev{transform:rotate(180deg)}
     .top1 .row{border:2px solid var(--yellow);background:linear-gradient(90deg,rgba(255,235,0,.20),var(--rn-navy2) 55%);box-shadow:0 0 0 1px rgba(255,235,0,.08),0 12px 34px rgba(0,0,0,.16)}.top1 .rank{width:50px;height:50px;display:grid;place-items:center;border-radius:50%;background:var(--yellow);color:#08111f;font-size:28px}.top2 .row{border-color:#d9e5ef;background:linear-gradient(90deg,rgba(217,229,239,.12),var(--rn-navy2) 48%)}.top2 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#d9e5ef;color:#08111f;font-size:24px}.top3 .row{border-color:#f59e0b;background:linear-gradient(90deg,rgba(245,158,11,.12),var(--rn-navy2) 48%)}.top3 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f59e0b;color:#08111f;font-size:24px}
     .members{display:none;background:#0d192b;border:1px solid var(--rn-line);border-top:0;border-radius:0 0 14px 14px;padding:10px 18px 14px}.team-block.open .members{display:block}.member{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.08)}.member:last-child{border-bottom:0}.member-name{font-size:13px;font-weight:800;color:#e8edf5}.member-km{font:900 20px 'Barlow Condensed';color:var(--yellow);white-space:nowrap}.member-km small{font:800 9px Manrope;color:var(--rn-muted);margin-left:3px}.member-empty{padding:10px 4px;color:var(--rn-muted);font-size:12px}.loading{padding:20px;border:1px dashed var(--rn-line);border-radius:12px;color:var(--rn-muted)}
@@ -39,7 +39,7 @@
       <section class="intro-card"><h2>Welcome <span id="welcome-count">10</span> Teams!</h2><p>Challenge mừng 9 năm Run n Beer: 3 runner mỗi đội, ít nhất 1 nữ. Cùng tích km trong 14 ngày để chạm mốc của team — và quan trọng nhất là giữ tinh thần chạy cùng nhau, vui cùng nhau.</p></section>
       <aside class="rules"><h3>Challenge Rules</h3><div><b>14 ngày</b> · Online 100%<br><b>3 runner / team</b> · ít nhất 1 nữ<br><b>150 km / team</b><br><b>50 km / runner</b></div></aside>
     </div>
-    <section id="leaderboard"><div class="leader-head"><div class="rn-eyebrow">Live standings</div><h2>Leaderboard</h2></div><div id="board" class="board"><div class="loading">Đang tải bảng xếp hạng…</div></div></section>
+    <section id="leaderboard"><div class="leader-head"><div class="rn-eyebrow">Live standings</div><h2>Leaderboard</h2><div id="last-updated" class="update-time"></div></div><div id="board" class="board"><div class="loading">Đang tải bảng xếp hạng…</div></div></section>
   </div></main>
 
   <footer class="rn-footer"><div class="rn-wrap rn-footer-inner"><div>Run n Beer · Est. 2017</div><div class="rn-motto">Stronger. Healthier. Happier.</div></div></footer>
@@ -58,7 +58,17 @@
     const key=s=>String(s??'').trim().toLocaleLowerCase('vi-VN').replace(/\s+/g,' ');
     const fmt=n=>n.toLocaleString('vi-VN',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
 
-    function parseLeaderboard(text){return csvRows(text).map(r=>[Number(r[0]),String(r[1]||'').trim(),num(r[2])]).filter(r=>r[1]);}
+    function parseLeaderboard(text){
+  const rows = csvRows(text);
+
+  const lastUpdated = rows[0]?.[4] || '';
+
+  const leaderboard = rows
+    .map(r=>[Number(r[0]),String(r[1]||'').trim(),num(r[2])])
+    .filter(r=>r[0] > 0 && r[1]);
+
+  return { leaderboard, lastUpdated };
+}
     function parseMembers(text){return csvRows(text).map(r=>({team:String(r[0]||'').trim(),name:String(r[1]||'').trim(),km:num(r[2])})).filter(r=>r.team&&r.name);}
 
     function render(rows,members){
@@ -76,7 +86,22 @@
 
     async function load(){
       let rows=fallback,members=[];
-      try{const r=await fetch(LEADERBOARD_CSV_URL,{cache:'no-store'});if(r.ok){const parsed=parseLeaderboard(await r.text());if(parsed.length)rows=parsed;}}catch(e){}
+      try{
+  const r=await fetch(LEADERBOARD_CSV_URL,{cache:'no-store'});
+
+  if(r.ok){
+    const parsed=parseLeaderboard(await r.text());
+
+    if(parsed.leaderboard.length){
+      rows=parsed.leaderboard;
+    }
+
+    if(parsed.lastUpdated){
+      document.getElementById('last-updated').innerHTML =
+        `Cập nhật gần nhất · <b>${esc(parsed.lastUpdated)}</b>`;
+    }
+  }
+}catch(e){}
       try{const r=await fetch(MEMBERS_CSV_URL,{cache:'no-store'});if(r.ok)members=parseMembers(await r.text());}catch(e){}
       render(rows,members);
     }
