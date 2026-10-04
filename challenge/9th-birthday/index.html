@@ -20,8 +20,8 @@
     .leader-head{border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.update-time{margin-top:12px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--rn-muted)}.update-time b{color:var(--yellow)}.leader-head h2{font:900 clamp(50px,7vw,82px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}
     .board{display:grid;gap:10px}.team-block{border-radius:14px;overflow:hidden}.row{width:100%;border:1px solid var(--rn-line);display:grid;grid-template-columns:68px 1fr 120px 28px;align-items:center;gap:12px;background:var(--rn-navy2);color:#fff;border-radius:14px;padding:16px 18px;position:relative;overflow:hidden;text-align:left;cursor:pointer;font:inherit}.row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--progress,0%);background:linear-gradient(90deg,rgba(255,235,0,.13),rgba(255,235,0,.02));pointer-events:none}.rank,.team,.km,.chev{position:relative;z-index:1}.rank{font:900 26px 'Barlow Condensed';color:var(--yellow)}.team{font:900 30px/.95 'Barlow Condensed';text-transform:uppercase}.km{text-align:right;font:900 27px 'Barlow Condensed'}.km small{display:block;color:var(--rn-muted);font:800 9px Manrope;text-transform:uppercase;letter-spacing:.08em}.chev{text-align:center;color:var(--yellow);font-size:18px;transition:transform .2s}.team-block.open .chev{transform:rotate(180deg)}
     .top1 .row{border:2px solid var(--yellow);background:linear-gradient(90deg,rgba(255,235,0,.20),var(--rn-navy2) 55%);box-shadow:0 0 0 1px rgba(255,235,0,.08),0 12px 34px rgba(0,0,0,.16)}.top1 .rank{width:50px;height:50px;display:grid;place-items:center;border-radius:50%;background:var(--yellow);color:#08111f;font-size:28px}.top2 .row{border-color:#d9e5ef;background:linear-gradient(90deg,rgba(217,229,239,.12),var(--rn-navy2) 48%)}.top2 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#d9e5ef;color:#08111f;font-size:24px}.top3 .row{border-color:#f59e0b;background:linear-gradient(90deg,rgba(245,158,11,.12),var(--rn-navy2) 48%)}.top3 .rank{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#f59e0b;color:#08111f;font-size:24px}
-    .members{display:none;background:#0d192b;border:1px solid var(--rn-line);border-top:0;border-radius:0 0 14px 14px;padding:10px 18px 14px}.team-block.open .members{display:block}.member{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.08)}.member:last-child{border-bottom:0}.member-name{font-size:13px;font-weight:800;color:#e8edf5}.member-km{font:900 20px 'Barlow Condensed';color:var(--yellow);white-space:nowrap}.member-km small{font:800 9px Manrope;color:var(--rn-muted);margin-left:3px}.member-empty{padding:10px 4px;color:var(--rn-muted);font-size:12px}.loading{padding:20px;border:1px dashed var(--rn-line);border-radius:12px;color:var(--rn-muted)}
-    @media(max-width:760px){.intro{grid-template-columns:1fr}.event-title{font-size:84px}.row{grid-template-columns:52px 1fr 76px 22px;padding:14px 12px;gap:8px}.team{font-size:23px}.km{font-size:21px}.top1 .rank{width:46px;height:46px}.top2 .rank,.top3 .rank{width:40px;height:40px}.members{padding:8px 12px 12px}}
+    .members{display:none;background:#0d192b;border:1px solid var(--rn-line);border-top:0;border-radius:0 0 14px 14px;padding:10px 18px 14px}.team-block.open .members{display:block}.member{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.08)}.member:last-child{border-bottom:0}.member-name{font-size:13px;font-weight:800;color:#e8edf5}.member-km{font:900 20px 'Barlow Condensed';color:var(--yellow);white-space:nowrap}.member-km small{font:800 9px Manrope;color:var(--rn-muted);margin-left:3px}.member-empty{padding:10px 4px;color:var(--rn-muted);font-size:12px}.loading{padding:20px;border:1px dashed var(--rn-line);border-radius:12px;color:var(--rn-muted)}.weekly{margin:0 0 54px}.weekly-head{display:flex;justify-content:space-between;gap:20px;align-items:end;border-bottom:1px solid var(--rn-line);padding-bottom:18px;margin-bottom:18px}.weekly-head h2{font:900 clamp(46px,6vw,72px)/.86 'Barlow Condensed';text-transform:uppercase;margin:0}.weekly-head p{max-width:520px;margin:0;color:var(--rn-muted);font-size:12px;line-height:1.6}.week-board{display:grid;gap:10px}.week-row{width:100%;border:1px solid var(--rn-line);display:grid;grid-template-columns:68px 1.4fr 110px 120px 110px 120px 28px;align-items:center;gap:12px;background:var(--rn-navy2);color:#fff;border-radius:14px;padding:15px 18px;text-align:left;cursor:pointer;font:inherit}.week-row .label{display:block;color:var(--rn-muted);font:800 8px Manrope;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.week-rank{font:900 26px 'Barlow Condensed';color:var(--yellow)}.week-team{font:900 26px/.95 'Barlow Condensed';text-transform:uppercase}.week-metric{font:900 21px 'Barlow Condensed';white-space:nowrap}.week-status{font-size:11px;font-weight:900;text-transform:uppercase}.week-status.pending{color:#ffb4a8}.week-status.pass{color:#7ee787}.week-chevron{color:var(--yellow);font-size:18px;text-align:center;transition:transform .2s}.week-team-block.open .week-chevron{transform:rotate(180deg)}.week-detail{display:none;background:#0d192b;border:1px solid var(--rn-line);border-top:0;border-radius:0 0 14px 14px;padding:14px 18px}.week-team-block.open .week-detail{display:block}.week-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.runner-card{background:#101f35;border-radius:10px;padding:12px}.runner-card b{display:block;font-size:12px}.runner-card strong{display:block;margin-top:6px;font:900 22px 'Barlow Condensed';color:var(--yellow)}.week-note{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;color:var(--rn-muted);line-height:1.6}.week-note b{color:#fff}.week-top1 .week-row{border:2px solid var(--yellow)}.week-top2 .week-row{border-color:#d9e5ef}.week-top3 .week-row{border-color:#f59e0b}
+    @media(max-width:760px){.intro{grid-template-columns:1fr}.event-title{font-size:84px}.row{grid-template-columns:52px 1fr 76px 22px;padding:14px 12px;gap:8px}.team{font-size:23px}.km{font-size:21px}.top1 .rank{width:46px;height:46px}.top2 .rank,.top3 .rank{width:40px;height:40px}.members{padding:8px 12px 12px}.weekly-head{display:block}.weekly-head p{margin-top:10px}.week-row{grid-template-columns:48px 1fr 78px 22px;padding:14px 12px;gap:8px}.week-team{font-size:22px}.week-row .raw,.week-row .days,.week-row .status-cell{display:none}.week-metric{font-size:20px}.week-detail-grid{grid-template-columns:1fr}.week-detail{padding:10px 12px 12px}}
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41J6EC0FBB"></script>
@@ -111,6 +111,14 @@
     </div>
   </div>
 </section>
+    <section id="week-01" class="weekly">
+      <div class="weekly-head">
+        <div><div class="rn-eyebrow">Week 01 · 28.09 — 04.10</div><h2>Weekly Leaderboard</h2></div>
+        <p>Xếp hạng theo <b>Counted KM</b> sau khi áp dụng Team Balance · 9 KM Rule. Trạng thái challenge vẫn được hiển thị riêng.</p>
+      </div>
+      <div id="week-board" class="week-board"><div class="loading">Đang tải bảng xếp hạng Tuần 01…</div></div>
+    </section>
+
     <section id="leaderboard"><div class="leader-head"><div class="rn-eyebrow">Live standings</div><h2>Leaderboard</h2><div id="last-updated" class="update-time"></div></div><div id="board" class="board"><div class="loading">Đang tải bảng xếp hạng…</div></div></section>
   </div></main>
 
@@ -119,8 +127,22 @@
   <script>
     const LEADERBOARD_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=880518161&single=true&output=csv";
     const MEMBERS_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=1558568729&single=true&output=csv";
+    const WEEKLY_CSV_URL=""; // Dán CSV publish của sheet WEB_WEEKLY vào đây khi sẵn sàng.
 
     const fallback=[[1,"Pọ this Pô that",41.32],[2,"3ba ba & Thỏ",41.02],[3,"Siu Nhơn",24.57],[4,"Quán nào?",20.90],[5,"Thắng Hào sáng, không Hạ pace",15.82],[6,"Muộn mà Dai",10.03],[7,"Team CT",0],[8,"8 Lời",0],[9,"Muộn Nhất",0]];
+
+    const weeklyFallback=[
+      {week:1,rank:1,team:"Baba & Thỏ",raw:173.16,counted:162.40,minDays:4,status:"CHƯA ĐẠT",note:"Có runner <50km",runners:[["Thơ NT",55.52],["Từ Thanh Vân",48.94],["Đoàn Bích Ngọc",68.70]]},
+      {week:1,rank:2,team:"Po this Pô that",raw:112.92,counted:112.92,minDays:3,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Nhật Thống",40.13],["Thành Công",40.72],["Thương Vince",32.07]]},
+      {week:1,rank:3,team:"Siu Nhơn",raw:126.25,counted:105.58,minDays:4,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Tú Minh",40.14],["Huế HT",57.89],["Phạm Hoàng D",28.22]]},
+      {week:1,rank:4,team:"Tháng Hào sảng, không Hạ pace",raw:99.17,counted:94.10,minDays:3,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Trần Thắng",35.14],["Nguyễn Hào",39.05],["Tuyết Hạ",24.98]]},
+      {week:1,rank:5,team:"Muộn Nhất",raw:98.18,counted:78.89,minDays:2,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Cường PVC",45.34],["Khanh Phan",35.79],["Thanh Khưu",17.05]]},
+      {week:1,rank:6,team:"8 Lời",raw:70.07,counted:70.07,minDays:4,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Lực Trần",27.73],["Đu Đủ Cha",20.82],["Trâm Trần",21.52]]},
+      {week:1,rank:7,team:"Muộn mà Dai",raw:61.21,counted:58.68,minDays:2,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Quỳnh Như",27.10],["Hương Nguyễn",18.54],["Nguyễn Trường",15.57]]},
+      {week:1,rank:8,team:"Team Nhức =))",raw:47.86,counted:47.86,minDays:2,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Nguyễn Nhật",17.77],["Trần Duy Thảo",12.15],["Nguyễn Thị Ch",17.94]]},
+      {week:1,rank:9,team:"Quán nào?",raw:71.96,counted:46.71,minDays:2,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Nhân Huỳnh",11.04],["Nguyễn Văn C",45.29],["Thành Trịnh",15.63]]},
+      {week:1,rank:10,team:"Team CT",raw:16.20,counted:16.20,minDays:1,status:"CHƯA ĐẠT",note:"Thiếu km team",runners:[["Thúy Bùi",5.02],["Vũ Đăng",6.06],["Lemy CT",5.12]]}
+    ];
 
     function csvRows(text){
       const lines=text.trim().split(/\r?\n/);return lines.slice(1).map(line=>{const out=[];let cur="",q=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'){if(q&&line[i+1]==='"'){cur+='"';i++;}else q=!q;}else if(c===','&&!q){out.push(cur);cur="";}else cur+=c;}out.push(cur);return out;});
@@ -143,6 +165,23 @@
 }
     function parseMembers(text){return csvRows(text).map(r=>({team:String(r[0]||'').trim(),name:String(r[1]||'').trim(),km:num(r[2])})).filter(r=>r.team&&r.name);}
 
+    function parseWeekly(text){
+      return csvRows(text).map(r=>({week:Number(r[0])||1,rank:Number(r[1]),team:String(r[2]||'').trim(),raw:num(r[3]),counted:num(r[4]),minDays:Number(r[5])||0,status:String(r[6]||'').trim(),note:String(r[7]||'').trim(),runners:[[String(r[8]||'').trim(),num(r[9])],[String(r[10]||'').trim(),num(r[11])],[String(r[12]||'').trim(),num(r[13])]]})).filter(x=>x.week===1&&x.rank>0&&x.team).sort((a,b)=>a.rank-b.rank);
+    }
+
+    function renderWeekly(rows){
+      document.getElementById('week-board').innerHTML=rows.map((x,i)=>{
+        const statusClass=/^(đạt|pass)$/i.test(x.status)?'pass':'pending';
+        const runnerHtml=x.runners.map(r=>`<div class="runner-card"><b>${esc(r[0]||'Runner')}</b><strong>${fmt(r[1])} KM</strong></div>`).join('');
+        const gap=x.runners.length?Math.max(...x.runners.map(r=>r[1]))-Math.min(...x.runners.map(r=>r[1])):0;
+        const cap=gap>9?'ADJUSTED':'BALANCED';
+        const cls=i===0?'week-top1':i===1?'week-top2':i===2?'week-top3':'';
+        return `<div class="week-team-block ${cls}"><button class="week-row" type="button" aria-expanded="false"><div class="week-rank">#${String(x.rank).padStart(2,'0')}</div><div class="week-team">${esc(x.team)}</div><div class="week-metric raw"><span class="label">Raw KM</span>${fmt(x.raw)}</div><div class="week-metric"><span class="label">Counted KM</span>${fmt(x.counted)}</div><div class="week-metric days"><span class="label">Min Valid Days</span>${x.minDays}</div><div class="week-status ${statusClass} status-cell"><span class="label">Status</span>${esc(x.status||'—')}</div><div class="week-chevron">⌄</div></button><div class="week-detail"><div class="week-detail-grid">${runnerHtml}</div><div class="week-note"><b>9 KM Rule:</b> ${cap} · <b>Gap:</b> ${fmt(gap)} km · <b>Min Valid Days:</b> ${x.minDays} · <b>Status:</b> ${esc(x.status||'—')}${x.note?` · <b>Note:</b> ${esc(x.note)}`:''}</div></div></div>`;
+      }).join('');
+      document.querySelectorAll('.week-team-block .week-row').forEach(btn=>btn.addEventListener('click',()=>{const block=btn.closest('.week-team-block');const open=block.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');}));
+    }
+
+
     function render(rows,members){
       const teams=rows.length;document.getElementById('team-count').textContent=teams;document.getElementById('welcome-count').textContent=teams;document.getElementById('runner-count').textContent=members.length||teams*3;
       const byTeam={};members.forEach(m=>(byTeam[key(m.team)]??=[]).push(m));
@@ -157,7 +196,9 @@
     }
 
     async function load(){
-      let rows=fallback,members=[];
+      let rows=fallback,members=[],weekly=weeklyFallback;
+      if(WEEKLY_CSV_URL){try{const r=await fetch(WEEKLY_CSV_URL,{cache:'no-store'});if(r.ok){const parsed=parseWeekly(await r.text());if(parsed.length)weekly=parsed;}}catch(e){}}
+      renderWeekly(weekly);
       try{
   const r=await fetch(LEADERBOARD_CSV_URL,{cache:'no-store'});
 
