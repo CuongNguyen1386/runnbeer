@@ -114,7 +114,7 @@
     <section id="week-01" class="weekly">
       <div class="weekly-head">
         <div><div class="rn-eyebrow">Week 01 · 28.09 — 04.10</div><h2>Weekly Leaderboard</h2></div>
-        <p>Xếp hạng theo <b>Counted KM</b> sau khi áp dụng Team Balance · 9 KM Rule. Trạng thái challenge vẫn được hiển thị riêng.</p>
+        <div><p>Xếp hạng theo <b>Counted KM</b> sau khi áp dụng Team Balance · 9 KM Rule. Trạng thái challenge vẫn được hiển thị riêng.</p><div id="weekly-last-updated" class="update-time"></div></div>
       </div>
       <div id="week-board" class="week-board"><div class="loading">Đang tải bảng xếp hạng Tuần 01…</div></div>
     </section>
@@ -127,7 +127,7 @@
   <script>
     const LEADERBOARD_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=880518161&single=true&output=csv";
     const MEMBERS_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=1558568729&single=true&output=csv";
-    const WEEKLY_CSV_URL=""; // Dán CSV publish của sheet WEB_WEEKLY vào đây khi sẵn sàng.
+    const WEEKLY_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQtlo0rgevfcv1Kj5z3PsmKvPllRXvzepZ5FGmGulWGwcRgfNOmINuS_mu1ZeXRyrfy9dTUflWBtfAD/pub?gid=1752091203&single=true&output=csv";
 
     const fallback=[[1,"Pọ this Pô that",41.32],[2,"3ba ba & Thỏ",41.02],[3,"Siu Nhơn",24.57],[4,"Quán nào?",20.90],[5,"Thắng Hào sáng, không Hạ pace",15.82],[6,"Muộn mà Dai",10.03],[7,"Team CT",0],[8,"8 Lời",0],[9,"Muộn Nhất",0]];
 
@@ -197,7 +197,7 @@
 
     async function load(){
       let rows=fallback,members=[],weekly=weeklyFallback;
-      if(WEEKLY_CSV_URL){try{const r=await fetch(WEEKLY_CSV_URL,{cache:'no-store'});if(r.ok){const parsed=parseWeekly(await r.text());if(parsed.length)weekly=parsed;}}catch(e){}}
+      if(WEEKLY_CSV_URL){try{const r=await fetch(WEEKLY_CSV_URL,{cache:'no-store'});if(r.ok){const text=await r.text();const parsed=parseWeekly(text);if(parsed.length)weekly=parsed;const weeklyRows=csvRows(text);const weeklyUpdated=weeklyRows[0]?.[14]||'';if(weeklyUpdated){document.getElementById('weekly-last-updated').innerHTML=`Last Updated · <b>${esc(weeklyUpdated)}</b>`;}}}catch(e){}}
       renderWeekly(weekly);
       try{
   const r=await fetch(LEADERBOARD_CSV_URL,{cache:'no-store'});
