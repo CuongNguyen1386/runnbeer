@@ -150,7 +150,7 @@
 
     function parseWeekly(text){
       return csvRows(text).map(r=>({
-        week:Number(r[0])||1,rank:Number(r[1]),team:String(r[2]||'').trim(),
+        week:(()=>{const m=String(r[0]||'').match(/\d+/);return m?Number(m[0]):1;})(),rank:Number(r[1]),team:String(r[2]||'').trim(),
         raw:num(r[3]),counted:num(r[4]),minDays:Number(r[5])||0,
         status:String(r[6]||'').trim(),note:String(r[7]||'').trim(),
         runners:[[String(r[8]||'').trim(),num(r[9])],[String(r[10]||'').trim(),num(r[11])],[String(r[12]||'').trim(),num(r[13])]]
@@ -233,7 +233,8 @@
       let weekly=weeklyFallback;
       if(WEEKLY_CSV_URL){
         try{
-          const r=await fetch(WEEKLY_CSV_URL,{cache:'no-store'});
+          const liveUrl=WEEKLY_CSV_URL+(WEEKLY_CSV_URL.includes('?')?'&':'?')+'_='+Date.now();
+          const r=await fetch(liveUrl,{cache:'no-store'});
           if(r.ok){
             const text=await r.text();
             const parsed=parseWeekly(text);
